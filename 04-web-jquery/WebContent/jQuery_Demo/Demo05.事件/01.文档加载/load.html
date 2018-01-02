@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../../script/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+
+	//$(function()) 和  window.onload = function(){}的区别
+	
+	/* 
+		window.onload会在当前网页全部加载完成之后，包括外部资源完全引入到当关页面，才会被触发函数中的内容
+		$(function(){})是在当前文档加载完成之后立刻执行，不会等待外部资源加载情况
+	*/
+	/* window.onload = function(){
+		alert("window.onload");
+	} */
+	
+	$(function(){
+		alert("jqoury.load");
+	})
+</script>
+</head>
+<body>
+
+	<iframe src="http://www.baidu.com" width="800" height="600"></iframe>
+
+</body>
+</html>

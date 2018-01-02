@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>表单</title>
+</head>
+<body>
+
+	<!-- 使用form标签来创建一个表单 -->
+	<!-- 作用：将用户填写的信息提交到服务器 -->
+	<!-- 
+		form : 用来定义一个表单区域
+		action : 用来指向要将信息提交到哪个服务器的路径
+		method : 用来指明提交方式，有两个可以指定，get和post。 默认使用get
+		
+		当点击提交按钮时，会将form表单中信息提交到action指定的位置，形式如：
+		target.html?username=xixi&pwd=123456
+		表单中的信息会以键值对的形式出现，键是标签指定的name属性值，值是用户输入的值
+		且键值对之间使用&进行连接
+		注：在表单域中要想将信息提交到服务上，表单中的标签必须要定义name属性
+	 -->
+	<form action="target.html" method="get">
+		<!-- 单行文本框 -->
+		用户名：<input type="text" name="username"><br>
+		<!-- 密码框 -->
+		密&nbsp;&nbsp;&nbsp;码：<input type="password" name="pwd"><br>
+		
+		<!-- 单选按钮 -->
+		<!-- 像单选按钮和多选按钮是通过name属性进行分组的 -->
+		<!-- 像单选按钮这样的表单项，是需要用户指定具体值的，不需要用户输入的。通常需要指明它的value属性值  -->
+		性别： 男<input type="radio" name="gender" value="1">    
+			女<input type="radio" name="gender" value="2"><br>
+			
+		<!-- 多选按钮 -->
+		爱好 ：
+		<input type="checkbox" name="hobby" value="zqq">足球 
+		<input type="checkbox" name="hobby" value="pqq">乒乓球 
+		<input type="checkbox" name="hobby" value="ymq">羽毛球 
+		<input type="checkbox" name="hobby" value="tq">台球 <br>
+		
+		<!-- 下拉列表框 -->
+		<!-- name属性要定义在select标签中，而value属性则要定义在option子标签中 -->
+		最喜欢的语言：
+		<select name="language">
+			<option value="C">C</option>
+			<option value="C#">C#</option>
+			<option value="php">php</option>
+			<option value="Java">Java</option>
+		</select>
+		
+		<!-- 提交按钮 -->
+		<br><input type="submit" >
+	</form>
+
+
+</body>
+</html>

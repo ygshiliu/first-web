@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JS中的事件</title>
+<!-- 通过引入外部js文件实现交互。注意js文件中不需要加script标签 -->
+<script type="text/javascript" src="click.js"></script>
+</head>
+<body>
+	<!-- 第1种，通过html标签的事件属性来实现 -->
+	<!-- 在js中，单引号与双引号具有同样的效果，但要注意引号之间嵌套的问题  -->
+	<!-- html与js代码耦合，且不具复用性，所以不推荐使用 -->
+	<button id="btnId" onclick="alert('*按钮被单击过*')">SayHello</button>
+	<button id="btn2">second</button>
+	
+	<!-- 第2种：写在script标签中 -->
+	<!-- js与html代码分开，彼此没有影响 -->
+<!-- 	<script>
+		 var btn2 = document.getElementById("btn2");
+		 btn2.onclick = function(){
+			 alert("second按钮被点击");
+		 }
+	</script> -->
+</body>
+</html>

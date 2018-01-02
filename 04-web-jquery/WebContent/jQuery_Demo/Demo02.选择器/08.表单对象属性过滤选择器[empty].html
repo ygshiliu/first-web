@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>表单对象属性过滤选择器</title>
+		<script type="text/javascript" src="../script/jquery-1.7.2.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//1.对表单内 可用input 赋值操作
+				$("#btn1").click(function(){
+					$(":enabled").val("New Value");
+				});
+				//2.对表单内 不可用input 赋值操作
+				$("#btn2").click(function(){
+					$(":disabled").val("New Value Too");
+				});
+				//3.获取多选框选中的个数
+				$("#btn3").click(function(){
+					/* 
+						注意：复选框选中过滤器有bug，会将所有需要用户指定的表单项，即checkbox radio select都会选中
+						
+					*/
+					var obj = $("input:checked");
+					//size()用来获取jQuery数组对象的长度
+					var size = obj.size();
+					alert("长度："+size);
+					//alert(obj.length);
+				});
+				//4.获取多选框选中的内容
+				$("#btn4").click(function(){
+					var obj = $(":checkbox:checked");
+					//each()会将jQuery数组中的每一个元素作为上下文来调用方法中的函数
+					//在函数中可以使用this,this是DOM对象
+					obj.each(function(i){
+						//i指下标
+						alert(this.value);
+					})
+				});
+				//5.获取下拉框选中的内容
+				$("#btn5").click(function(){
+					/* 
+						注：option的value没有明文指定，则为它文本值
+					*/
+					var address = $("select option:selected");
+					 for(var i=0;i<address.length;i++){
+						//alert(address[i].value);
+						//alert(address[i].innerHTML);
+						alert($(address[i]).val());
+					} 
+					//text()将所有匹配元素的文本内容组合后的文本
+					var text = address.text();
+					//html（）只返回第一个匹配元素的HTML 内容
+					var text = address.html();
+					alert(text);
+				});
+			})	
+		</script>
+	</head>
+	<body>
+		<h3>表单对象属性过滤选择器</h3>
+		 <button id="btn1">对表单内 可用input 赋值操作.</button>
+  		 <button id="btn2">对表单内 不可用input 赋值操作.</button><br /><br />
+		 <button id="btn3">获取多选框选中的个数.</button>
+		 <button id="btn4">获取多选框选中的内容.</button><br /><br />
+         <button id="btn5">获取下拉框选中的内容.</button><br /><br />
+		 
+		<form id="form1" action="#">			
+			可用元素: <input name="add" value="可用文本框1"/><br>
+			不可用元素: <input name="email" disabled="disabled" value="不可用文本框"/><br>
+			可用元素: <input name="che" value="可用文本框2"/><br>
+			不可用元素: <input name="name" disabled="disabled" value="不可用文本框"/><br>
+			<br>
+			
+			多选框: <br>
+			<input type="checkbox" name="newsletter" checked="checked" value="test1" />test1
+			<input type="checkbox" name="newsletter" value="test2" />test2
+			<input type="checkbox" name="newsletter" value="test3" />test3
+			<input type="checkbox" name="newsletter" checked="checked" value="test4" />test4
+			<input type="checkbox" name="newsletter" value="test5" />test5
+			
+			<br><br>
+			下拉列表1: <br>
+			<select name="test" multiple="multiple" style="height: 100px">
+				<option>浙江</option>
+				<option selected="selected"  value="ln">辽宁</option>
+				<option>北京</option>
+				<option selected="selected">天津11</option>
+				<option>广州</option>
+				<option>湖北</option>
+			</select>
+			
+			<br><br>
+			下拉列表2: <br>
+			<select name="test2">
+				<option>浙江</option>
+				<option>辽宁</option>
+				<option selected="selected">北京</option>
+				<option>天津</option>
+				<option>广州</option>
+				<option>湖北</option>
+			</select>
+		</form>		
+	</body>
+</html>
+

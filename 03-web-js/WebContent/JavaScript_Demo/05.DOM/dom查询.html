@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Untitled Document</title>
+		<link rel="stylesheet" type="text/css" href="style/css.css" />
+		<script type="text/javascript">
+			
+		/* 
+			DOM ： Document Object Model
+			Document 指当前html文档
+			Object 指html文档中的标签或属性
+			Model 代表Object之间的关系
+			
+			
+		*/
+		//当页面加载完成之后才执行此函数
+		window.onload = function(){
+			
+			//查找#bj节点
+			var bj = document.getElementById("bj");
+			//alert(bj.nodeName+"--"+bj.nodeType);
+			//查找所有li节点
+			//返回一组指定标签的数组集合。可通过length属性获取长度
+			var lis = document.getElementsByTagName("li");
+			//alert(lis.length)
+			//查找name=gender的所有节点
+			//获取指定name属性值 的元素数组
+			var gender = document.getElementsByName("gender");
+			//alert(gender.length);
+			
+			//查找#city下所有li节点
+			var city = document.getElementById("city");
+			var city_lis = city.getElementsByTagName("li");
+			//alert(city_lis.length);
+			
+			//返回#city的所有子节点
+			//不同浏览对childNodes属性的支持有所不同，慎用
+			var child = city.childNodes;
+			//alert(child.length);
+			//返回#phone的第一个子节点
+			var first = city.firstChild;
+			//alert(first);
+			//返回#bj的父节点
+			var parent = bj.parentNode;
+			//alert(parent);
+			//返回#android的前一个兄弟节点
+			var android = document.getElementById("android");
+			var prevoide = android.previousSibling;
+			//alert(prevoide);
+			
+			//读取#username的value属性值
+			var username = document.getElementById("username");
+			//获取元素对象的属性值 ：对象.属性
+			//alert(username.value);
+			//设置#username的value属性值
+			//设置元素对象的属性值：对象.属性 = 值
+			username.value = "11111111";
+			//返回#bj的文本值
+			/* var text = bj.firstChild;
+			alert(text.nodeValue); */
+			
+			//通过innerHTML属性来设置和获取元素节点的标签体中的内容
+			//获取
+			alert(bj.innerHTML);
+			//设置
+			bj.innerHTML = "昌平";
+			
+			/* 漏掉给按钮绑定点击事件了 */
+		}
+		
+		</script>
+	</head>
+	<body>
+		<div id="total">
+			<div class="inner">
+				<p>
+					你喜欢哪个城市?
+				</p>
+
+				<ul id="city">
+					<li id="bj">北京</li>
+					<li>上海</li>
+					<li>东京</li>
+					<li>首尔</li>
+				</ul>
+
+				<br>
+				<br>
+
+				<p>
+					你喜欢哪款单机游戏?
+				</p>
+
+				<ul id="game">
+					<li id="rl">红警</li>
+					<li>实况</li>
+					<li>极品飞车</li>
+					<li>魔兽</li>
+				</ul>
+
+				<br />
+				<br />
+
+				<p>
+					你手机的操作系统是?
+				</p>
+
+				<ul id="phone"><li>IOS</li><li id="android">Android</li><li>Windows Phone</li></ul>
+			</div>
+
+			<div class="inner">
+				gender:
+				<input type="radio" name="gender" value="male"/>
+				Male
+				<input type="radio" name="gender" value="female"/>
+				Female
+				<br>
+				<br>
+				name:
+				<input type="text" name="name" id="username" value="abcde"/>
+			</div>
+		</div>
+		<div id="btnList">
+			<div><button id="btn01">查找#bj节点</button></div>
+			<div><button id="btn02">查找所有li节点</button></div>
+			<div><button id="btn03">查找name=gender的所有节点</button></div>
+			<div><button id="btn04">查找#city下所有li节点</button></div>
+			<div><button id="btn05">返回#city的所有子节点</button></div>
+			<div><button id="btn06">返回#phone的第一个子节点</button></div>
+			<div><button id="btn07">返回#bj的父节点</button></div>
+			<div><button id="btn08">返回#android的前一个兄弟节点</button></div>
+			<div><button id="btn09">返回#username的value属性值</button></div>
+			<div><button id="btn10">设置#username的value属性值</button></div>
+			<div><button id="btn11">返回#bj的文本值</button></div>
+		</div>
+	</body>
+</html>

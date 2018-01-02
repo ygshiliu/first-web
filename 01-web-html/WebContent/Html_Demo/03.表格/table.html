@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>表格</title>
+</head>
+<body>
+
+	<!-- 在这里创建表格 -->
+	<!-- 
+		table标签:来定义一个表格域
+		tr:定义一行
+		td:定义一行中的一个单元格
+		注意：tr在table标签中使用，td要在tr标签中使用
+		
+		姓名		成绩		组名
+		haha	90		1
+		haha	90		1
+		xixi	90		2
+		xixi	90		2
+		neinei	90		3
+		neinei	90		4
+		班平均成绩	    90
+	 -->
+	
+	<table border="1" width="400px" height="200px">
+		<tr>
+			<td>姓名</td>
+			<td>成绩</td>
+			<td>组名</td>
+		</tr>
+		<tr>
+			<td>haha</td>
+			<td>90</td>
+			<td rowspan="2">1</td>
+		</tr>
+		<tr>
+			<td>haha</td>
+			<td>90</td>
+		</tr>
+		<tr>
+			<td>xixi</td>
+			<td>90</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>xixi</td>
+			<td>90</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>班平均成绩</td>
+			<td colspan="2">90</td>
+		</tr>
+	</table>
+
+</body>
+</html>

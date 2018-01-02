@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	
+	body {
+		background-color: #bfa;
+	}
+	
+	div{
+		width:100px;
+		height:260px;
+		margin:10px 10px 10px 10px;
+		padding:10px 10px 10px 10px;
+		
+	}
+	
+	div.border{
+		border: 2px white solid;
+	}
+	
+	div.redDiv{
+		background-color: red;
+	}
+	
+	div.blackDiv{
+		background-color: black;
+	}
+	
+	
+	
+</style>
+
+<script type="text/javascript" src="script/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+	
+
+	$(function(){
+		
+		//选择要操作的div元素;
+		var $divEle = $('div:first');
+		
+		$('#btn01').click(function(){
+			//addClass() - 向被选元素添加一个或多个类
+			//多个类名之间使用空格分隔
+			$divEle.addClass("redDiv blackDiv")
+			//$divEle.addClass("blackDiv")
+		});
+		
+		$('#btn02').click(function(){
+			//removeClass() - 从被选元素删除一个或多个类 
+			//不传参数，将删除所有
+			$divEle.removeClass("blackDiv")
+		});
+		
+		$('#btn03').click(function(){
+			//hasClass() - 检查被选元素是否包含指定的 class,返回布尔值
+			var flag = $divEle.hasClass("blackDiv")
+			alert(flag);
+			
+		});
+		
+		$('#btn04').click(function(){
+			//toggleClass() - 对被选元素进行添加/删除类的切换操作 
+			$divEle.toggleClass("blackDiv")
+		});
+		
+		$('#btn05').click(function(){
+			//css() - 设置或返回样式属性
+			//传入一个样式名，则用来获取样式值
+			//var obj = $divEle.css("border");
+			//alert(obj)
+			
+			//传入一个样式对，则用来设置样式
+			// $divEle.css("border-color","#333")
+			 
+			 //设置多个样式，需要传入一个js对象
+			 $divEle.css({"border-color":"#333","background-color":"#fdd"})
+			 
+		});
+		
+		$('#btn06').click(function(){
+			//height() - 设置或返回匹配元素的高度。
+			//无参，则获取元素的高度，单位px
+			var height = $divEle.height();
+			//alert(height);
+			
+			//有参，设置元素高度
+			//$divEle.height(200);
+			
+			//扩展：
+			var innerHeight = $divEle.innerHeight();
+			var outerHeight = $divEle.outerHeight();
+			alert("height:"+height+",innerHeight:"+innerHeight+",outerHeight:"+outerHeight);
+			
+		});
+		
+		$('#btn07').click(function(){
+			//width() - 设置或返回匹配元素的宽度。
+		});
+		
+		$('#btn08').click(function(){
+			//offset() - 返回第一个匹配元素相对于文档的位置。
+			//返回一个对象的位置，包括两个属性：left(x)和top(y)
+			//相对当前网页左上角
+			var position = $divEle.offset();
+			//alert(position.left+"--"+position.top)
+			
+			$divEle.offset({top:130,left:130})
+			
+		});
+		
+		$('#btn09').click(function(){
+			//hide() - 隐藏元素。
+			//fast,slow,normal
+			$divEle.hide("slow");
+		});
+		
+		$('#btn10').click(function(){
+			//show() - 显示元素。
+			$divEle.show("fast");
+		});
+		
+		$('#btn11').click(function(){
+			//toggle() - 切换元素显示状态。s
+			$divEle.toggle("fast");
+		});
+		
+	})
+</script>
+</head>
+<body>
+
+	<table align="center">
+		<tr>
+			<td>
+				<div class="border">
+				</div>
+			</td>
+			
+			<td>
+				<div class="btn">
+					<input type="button" value="addClass()" id="btn01"/>
+					<input type="button" value="removeClass()" id="btn02"/>
+					<input type="button" value="hasClass()" id="btn03"/>
+					<input type="button" value="toggleClass()" id="btn04"/>
+					<input type="button" value="css()" id="btn05"/>
+					<input type="button" value="height()" id="btn06"/>
+					<input type="button" value="width()" id="btn07"/>
+					<input type="button" value="offset()" id="btn08"/>
+					<input type="button" value="hide()" id="btn09"/>
+					<input type="button" value="show()" id="btn10"/>
+					<input type="button" value="toggle()" id="btn11"/>
+				</div>
+			</td>
+		</tr>
+	</table>
+	
+	
+	
+	<br /> <br />
+	
+	
+	<br /> <br />
+	
+	
+	
+</body>
+</html>

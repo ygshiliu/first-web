@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>核心函数</title>
+<script type="text/javascript" src="../script/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+
+	//核心函数的4个作用
+	
+	//传入参数为[函数]时：在文档加载完成后执行这个函数
+	$(function(){
+		//传入参数为[HTML字符串]时：根据这个字符串创建元素节点对象
+		//<div id="testDiv">Atguigu is Very Good!</div>
+		var $div = $("<div id='testDiv'>Atguigu is Very Good!</div>");
+		//将对象添加到html页面中
+		$div.insertAfter("#testDiv");
+		
+		//传入参数为[选择器字符串]时：根据这个字符串查找元素节点对象
+		var $btn = $("#dom2dom");
+		//text()获取标签体中的内容
+		//alert($btn.text());
+		
+		//传入参数为[DOM对象]时：将DOM对象包装为[jQuery对象]返回
+		/* 
+			Dom对象：使用原生 js 获取的对象称为原生 Dom对象。如
+			var  btn = document.getElementById("testDiv");
+			
+			jQuery对象：通过jQuery核心函数获取的对象。如
+			var $btn = $("#dom2dom");
+			
+			为什么有Dom对象还要有jquery对象呢？
+			区别：
+			1. Dom对象与jQuery对象是两个对象，不是一回事
+			2. jQeury对象提供了大量简化Dom与HTML之间操作的方法
+			3. Dom对象不能调用jQuery对象提供的方法，而Dom对象也不能调用jQuery对象的方法
+			
+			DOM对象与jQuery对象之间互转的问题：
+			DOM对象 转 jQuery对象：$(DOM对象)
+			jQuery 转 Dom对象 ：jQuery对象[下标]
+			
+			jQuery对象的本质就是DOM对象数组
+
+		*/
+		var  btn = document.getElementById("testDiv");
+		//alert(btn); //[object HTMLDivElement]
+		//alert($btn); //[object Object]
+		
+		//alert($(btn)); //[object Object]
+		alert($btn[0]);  //[object HTMLButtonElement]
+	})
+
+</script>
+</head>
+<body>
+	
+	<div id="testDiv">Atguigu is Very Good!</div>
+	
+	<button id="dom2dom">使用DOM对象调用DOM方法</button>
+	<button id="dom2jQuery">使用DOM对象调用jQuery方法</button>
+	<button id="jQuery2jQuery">使用jQuery对象调用jQuery方法</button>
+	<button id="jQuery2dom">使用jQuery对象调用DOM方法</button>
+	
+</body>
+</html>

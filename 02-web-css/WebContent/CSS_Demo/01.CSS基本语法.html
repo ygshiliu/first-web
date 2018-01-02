@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS基本语法</title>
+<!-- 第2种，使用style标签 .注意style标签必须写在head标签中-->
+<!-- 可以实现在当前页面中复用 -->
+<!-- <style type="text/css">
+	p{
+		border:1px dotted red;
+	}
+</style> -->
+
+<!-- 第3种，使用link标签来引入一个外部的css文件 -->
+<!-- href:用来指定要引入的外部css文件的路径 -->
+<!-- 可以实现在多处文件中复用，却html与CSS分离 -->
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+</head>
+<body>
+	<!-- 第1种，使用标签的style属性来设置标签体的样式 -->
+	<!-- 样式使用键值对结构，中间使用冒号连接,多个样式对间使用分号隔开 -->
+	<!-- 不能实现复用 ，且结构与样式耦合，所以不推荐使用-->
+<!-- 	<p style="color:green;font-size:50px">落霞与孤鹜齐飞，秋水共长天一色</p>
+	<p style="color:green;font-size:50px">你负责貌美如花，我负责赚钱养家</p>
+	 -->
+	
+	<p>落霞与孤鹜齐飞，秋水共长天一色</p>
+	<p>你负责貌美如花，我负责赚钱养家</p>
+</body>
+</html>
