@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+	<student id="1">
+		<name>xixi</name>
+		<age>18</age>
+		<gender>male</gender>
+		<!-- <desc> 年龄&lt;20 </desc> -->
+		<desc> 
+			<![CDATA[年龄<20]]>
+		 </desc>
+	</student>
+	<student id="2">
+		<name>haha</name>
+		<age>25</age>
+		<gender>female</gender>
+		<desc> 年龄>20 </desc>
+	</student>
+	<STUDENT></STUDENT>
+	<!-- 
+		1.首行必须是xml的声明，且必须顶格写
+		2.xml文件有且仅有一个根标签
+		3.区分大小写字母
+		4.标签不能交叉嵌套
+		5.标签必须正确关闭
+		6.属性有值，且必须加引号，必须写在开始标签处                  
+		7.标签名不能使用数字开头                            
+		8.xml语法要求非常严格，而html语法要求并不严格              
+		9.xml是自定义标签，而html是预定义标签                  
+		10. xml中的特殊字符需要转义，1是使用实体，2是使用<![CDATA[]]>  
+	 -->
+</students>
+<!-- <students></students> -->
