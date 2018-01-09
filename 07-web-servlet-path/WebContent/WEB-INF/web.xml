@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>07-web-servlet-path</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>forwardServlet</display-name>
+    <servlet-name>forwardServlet</servlet-name>
+    <servlet-class>com.wnn.servlet.forwardServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>forwardServlet</servlet-name>
+    <!-- 
+    	urlpattern映射配置方式：
+    	①精确匹配：/path/资源名
+    		就是请求的目标路径与urlpattern中的完全一致
+    	②路径匹配：/path/*
+    		只要访问的目标路径在urlpattern指定的路径下
+    		特殊： /* 或  / 代表全匹配
+    	③后缀匹配：*.后缀
+    		访问的目标路径必须是以指定的urlpattern结尾
+    
+    	注：/*.do 不能这样配置
+     -->
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+</web-app>

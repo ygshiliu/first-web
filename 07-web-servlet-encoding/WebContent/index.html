@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>index.html</h1>
+	
+	<!-- 
+		为什么会产生乱码？浏览器与服务器使用的字符集不一致造成的
+		解决方案：统一浏览器与服务器使用的字符集，统一设置为utf8
+			
+		浏览器：
+		utf8:%E5%98%BB%E5%98%BB
+		gbk: %CE%FB%CE%FB
+		服务器默认使用的字符集：iso-8859-1
+		
+		请求编码：浏览器进行编码  ， 服务器进行解码
+			Get请求 ： request.setCharacterEncoding("utf-8")
+			Post请求：在server.xml文件中的 connector标签中加入一个属性：URIEncoding="utf-8"
+			注意：get请求解码时，request.setCharacterEncoding("utf-8")必须在第一次获取请求参数之前设置才有效
+		
+		响应编码：服务器编码，浏览器解码
+			response.setContentType("text/html;charset=utf-8");
+		
+	 -->
+	<a href="/07-web-servlet-encoding/EncodeServlet?username=嘻嘻">encode</a>
+	<form action="/07-web-servlet-encoding/EncodeServlet" method="post"> 
+		用户名：<input type="text" name="username" ><br>
+		密码：<input type="password" name="password"><br>
+		<input type="submit">
+	</form>
+	
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>index.html</h1>
+	<!-- 
+		这是由于相对路径产生的路径问题
+		什么是相对路径？所谓相对路径就是相对当前资源所在的路径
+		这就是由于参考路径的改变，导致的
+		http://localhost:8090/07-web-servlet-path/index.html
+		http://localhost:8090/07-web-servlet-path/forwardServlet
+		
+		解决方案：保证参考点不变
+		在实际开发中，避免使用相对路径，而使用绝对路径
+		绝对路径通常以/开头
+		
+		客户端：浏览器解析
+			/代表   http://localhost:8090/ 服务器ip地址
+		服务端：服务器解析
+			/代表  /07-web-servlet-path 项目名
+			
+		浏览器解析：要加上项目名
+			页面
+			重定向
+			
+		服务器解析：
+			web.xml
+			转发
+			
+	 -->
+	 <!-- a标签是浏览器解析,/代表 http://localhost:8090/07-web-servlet-path/forwardServlet -->
+	<a href="/07-web-servlet-path/aass.do">1.html</a>
+</body>
+</html>
